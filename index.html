@@ -67,8 +67,10 @@ button.fertig{background:#1F7A3D}
 .mxKlapp[open]>summary{margin-bottom:10px}.mxKlapp[open]>summary em{transform:rotate(90deg)}
 .mxBg{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:90;display:none}.mxBg.auf{display:block}
 .mxFenster{position:fixed;left:0;right:0;bottom:0;z-index:91;background:#fff;border-radius:22px 22px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:none;box-shadow:0 -10px 30px rgba(0,0,0,.18);margin:0 auto;max-width:560px;box-sizing:border-box;text-align:left}
-.mxFenster.auf{display:block}
-@media(min-width:700px){.mxFenster{top:50%;bottom:auto;transform:translateY(-50%);border-radius:22px;width:calc(100% - 48px);padding:20px}}
+.mxFenster.auf{display:block;animation:mxHoch .22s ease-out}.mxBg.auf{animation:mxBlende .2s ease-out}
+@keyframes mxHoch{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}@keyframes mxBlende{from{opacity:0}to{opacity:1}}
+@media(min-width:700px){.mxFenster{top:50%;bottom:auto;transform:translateY(-50%);border-radius:22px;width:calc(100% - 48px);padding:20px}.mxFenster.auf{animation:mxMitte .2s ease-out}}
+@keyframes mxMitte{from{transform:translateY(-46%);opacity:0}to{transform:translateY(-50%);opacity:1}}
 .mxKopf{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
 .mxKopf h3{font-size:19px;font-weight:900;margin:0;color:#1C1C1E}
 .mxZu{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:0;background:#F2F2F4;font-size:17px;font-weight:800;cursor:pointer;color:#1C1C1E;font-family:inherit}
